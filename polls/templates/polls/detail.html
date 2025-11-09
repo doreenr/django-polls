@@ -1,0 +1,36 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+
+<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+  {% csrf_token %}
+  {% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+  {% endfor %}
+  <button type="submit">Vote</button>
+</form>
+
+<hr>
+
+<h2>Comments</h2>
+<ul>
+  {% for c in question.comments.all|dictsortreversed:'created_at' %}
+    <li>{{ c.text }} <small>— {{ c.created_at }}</small></li>
+  {% empty %}
+    <li>No comments yet.</li>
+  {% endfor %}
+</ul>
+
+<h3>Add a comment</h3>
+<form action="{% url 'polls:post_comment' question.id %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
