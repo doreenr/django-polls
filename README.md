@@ -116,21 +116,6 @@ Once the server is running, open your web browser and go to:
 - **Polls page:** `http://127.0.0.1:8000/polls/`
 
 
-#
-```
-
-
-**Adding new packages:**
-If you want to add a new Python package:
-1. Open `pyproject.toml` and add it to the dependencies list
-2. Run `uv sync` to install it
-3. That's it! uv handles the rest
-
-
-- **Python 3.13+** - The programming language
-- **Django 5.2.8** - The web framework (makes building web apps way easier)
-- **uv** - The package manager (super fast!)
-- **SQLite** - The database (comes built-in, perfect for learning)
 
 ## Links
 - [Django Documentation](https://docs.djangoproject.com/) - The official docs 
