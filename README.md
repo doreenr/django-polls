@@ -31,13 +31,24 @@ Before you can run this project, you'll need a couple of things installed on you
 
 ### Step 1: Get the Code
 
-First, you need to download this project. If you're using git, run:
-```bash
-git clone <repository-url>
-cd django-polls
-```
+First, you need to download this project from GitHub.
 
-If you just downloaded it as a zip file, unzip it and open a terminal in that folder.
+1. Go to the repository page: https://github.com/doreenr/django-polls
+2. Click the green "Code" button near the top right
+3. Copy the HTTPS URL (it should look like `https://github.com/doreenr/django-polls.git`)
+4. Open your terminal and navigate to the folder where you want to place the project:
+   ```bash
+   cd /path/to/your/projects/folder
+   ```
+   (Replace `/path/to/your/projects/folder` with wherever you want to keep your projects, like `~/Projects` or `~/Documents/code`)
+5. Run the clone command:
+   ```bash
+   git clone https://github.com/doreenr/django-polls.git
+   ```
+6. Navigate into the project folder:
+   ```bash
+   cd django-polls
+   ```
 
 ### Step 2: Install Everything
 
