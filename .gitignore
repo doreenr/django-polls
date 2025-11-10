@@ -11,3 +11,4 @@ db.sqlite3
 venv/
 myenv/
 .env/
+.venv/
