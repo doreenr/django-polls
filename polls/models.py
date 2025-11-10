@@ -21,6 +21,14 @@ class Choice(models.Model):
         return self.choice_text
 
 class Comment(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="comments")
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE, related_name="comments"
+    )
     text = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']  # newest comments first
+
+    def __str__(self):
+        return self.text[:60]

@@ -19,7 +19,7 @@
 
 <h2>Comments</h2>
 <ul>
-  {% for c in question.comments.all|dictsortreversed:'created_at' %}
+  {% for c in question.comments.all %}
     <li>{{ c.text }} <small>— {{ c.created_at }}</small></li>
   {% empty %}
     <li>No comments yet.</li>
